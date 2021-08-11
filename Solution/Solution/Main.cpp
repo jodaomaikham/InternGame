@@ -30,13 +30,11 @@ int main()
 
 	//swap by Referent using pointers.
 	printf(" \nSwap by Referent using pointers\n");
-	int x;
-	int y;
 	printf("Enter first number :\n");
-	scanf_s("%d", &x);
+	scanf_s("%d", &a);
 	printf("Enter second number : \n");
-	scanf_s("%d", &y);
-	swap(&x, &y);
-	printf("Result swap : \n%d\n%d\n", x, y);
+	scanf_s("%d", &b);
+	swap(&a, &b);
+	printf("After swap : \n%d\n%d\n", a, b);
 	return 0;
 }
