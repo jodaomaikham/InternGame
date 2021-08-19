@@ -11,7 +11,7 @@ int  main()
 	do {
 		
 		cout << "\n";
-		cout << "*****SET DEFAULT THE DOOR AT LOCKED*****\n\n";
+		cout << "*****SET DEFAULT THE DOOR IS LOCKED*****\n\n";
 		cout << ".....ACTION LIST.....\n" << endl;
 		cout << "1 :  OPEN THE DOOR..." << endl;
 		cout << "2 :  CLOSE THE DOOR..." << endl;
