@@ -22,7 +22,7 @@ int main()
 			cin.ignore(100,'\n');
 		}
 		else 
-			cout << "****The value must be betweem 0 > && <=20 ****\n";
+			cout << "****The value must be between 0 > && <=20 ****\n";
 			cout << "Let's try again: \n";
 			cin >> n;
 	}
