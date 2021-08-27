@@ -24,7 +24,7 @@ GSCredit::~GSCredit()
 void GSCredit::Init()
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D.nfg");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_home.tga");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("background.tga");
 
 	// background
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -35,10 +35,10 @@ void GSCredit::Init()
 	std::shared_ptr<GameButton> button = std::make_shared<GameButton>(model, shader, texture);
 
 
-	// back button
-	texture = ResourceManagers::GetInstance()->GetTexture("return_button.tga");
+	// return button
+	texture = ResourceManagers::GetInstance()->GetTexture("home.tga");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(Globals::screenWidth - 50, 50);
+	button->Set2DPosition(Globals::screenWidth - 25, 30);
 	button->SetSize(50, 50);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_MENU);
@@ -47,8 +47,8 @@ void GSCredit::Init()
 
 	// game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
-	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("Sad Kropotkin Laugh.otf");
-	m_textGameName = std::make_shared< Text>(shader, font, "Croco-macot intern game by Bouncho DAOMAIKHAM", TextColor::RED, 1.5);
+	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("karma suture.otf");
+	m_textGameName = std::make_shared< Text>(shader, font, "COIN EATER INTERN BY JO DAOMAIKHAM", TextColor::BLACK, 1.5);
 	m_textGameName->Set2DPosition(Globals::screenWidth -700 , Globals::screenHeight / 2);
 
 

@@ -16,7 +16,7 @@ GSMenu::~GSMenu()
 void GSMenu::Init()
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D.nfg");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_home.tga");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("background.tga");
 
 	// background
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -25,20 +25,20 @@ void GSMenu::Init()
 	m_background->SetSize(Globals::screenWidth, Globals::screenHeight);
 
 	// play button
-	texture = ResourceManagers::GetInstance()->GetTexture("play_button.tga");
+	texture = ResourceManagers::GetInstance()->GetTexture("Play.tga");
 	std::shared_ptr<GameButton> button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(Globals::screenWidth / 2, Globals::screenHeight / 1.5);
-	button->SetSize(100, 100);
+	button->Set2DPosition(Globals::screenWidth / 2, Globals::screenHeight / 1.2);
+	button->SetSize(120, 60);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_PLAY);
 		});
 	m_listButton.push_back(button);
 
 	// credit button
-	texture = ResourceManagers::GetInstance()->GetTexture("credit_button.tga");
+	texture = ResourceManagers::GetInstance()->GetTexture("Credit_button.tga");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(Globals::screenWidth - 850, 50);
-	button->SetSize(60, 60);
+	button->Set2DPosition(Globals::screenWidth - 875, 30);
+	button->SetSize(50, 50);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateType::STATE_CREDIT);
 		});
@@ -48,8 +48,8 @@ void GSMenu::Init()
 	// exit button
 	texture = ResourceManagers::GetInstance()->GetTexture("exit_button.tga");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(Globals::screenWidth - 50, 50);
-	button->SetSize(50, 50);
+	button->Set2DPosition(Globals::screenWidth - 40, 30);
+	button->SetSize(70, 50);
 	button->SetOnClick([]() {
 		exit(0);
 		});
@@ -57,9 +57,9 @@ void GSMenu::Init()
 
 	// game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
-	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("Sad Kropotkin Laugh.otf");
-	m_textGameName = std::make_shared< Text>(shader, font, "Croco-mascot", TextColor::RED, 3.0);
-	m_textGameName->Set2DPosition(Vector2(320, 200));
+	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("karma suture.otf");
+	m_textGameName = std::make_shared< Text>(shader, font, "COIN EATER", TextColor::RED, 2.0);
+	m_textGameName->Set2DPosition(Vector2(350, 150));
 }
 
 void GSMenu::Exit()

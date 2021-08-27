@@ -32,9 +32,9 @@ void GSPlay::Init()
 	m_background->SetSize(Globals::screenWidth, Globals::screenHeight);
 
 	// button clode
-	texture = ResourceManagers::GetInstance()->GetTexture("exit_button.tga");
+	texture = ResourceManagers::GetInstance()->GetTexture("home.tga");
 	std::shared_ptr<GameButton>  button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(Globals::screenWidth - 50, 50);
+	button->Set2DPosition(Globals::screenWidth - 25, 30);
 	button->SetSize(50, 50);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->PopState();
@@ -43,9 +43,9 @@ void GSPlay::Init()
 
 	// score
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
-	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("Sad Kropotkin Laugh.otf");
-	m_score = std::make_shared< Text>(shader, font, "score: 0", TextColor::RED, 1.0);
-	m_score->Set2DPosition(Vector2(5, 25));
+	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("karma suture.otf");
+	m_score = std::make_shared< Text>(shader, font, "score: 0", TextColor::RED, 1);
+	m_score->Set2DPosition(Vector2(5, 30));
 }
 
 void GSPlay::Exit()
