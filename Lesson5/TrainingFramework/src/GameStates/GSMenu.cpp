@@ -58,7 +58,7 @@ void GSMenu::Init()
 	// game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("karma suture.otf");
-	m_textGameName = std::make_shared< Text>(shader, font, "COIN EATER", TextColor::RED, 2.0);
+	m_textGameName = std::make_shared< Text>(shader, font, "JUMPER", TextColor::RED, 2.0);
 	m_textGameName->Set2DPosition(Vector2(350, 150));
 }
 
